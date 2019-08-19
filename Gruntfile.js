@@ -17,7 +17,7 @@ module.exports = function (grunt) {
           'js/script.min.js': ['js/script.js']
         }
       }
-    }
+    },
 
     ////// Katherine above Brayden below
     csslint: {
