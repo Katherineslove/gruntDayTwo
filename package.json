@@ -21,13 +21,9 @@
     "grunt-contrib-csslint": "^2.0.0",
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-jshint": "^2.1.0",
-<<<<<<< HEAD
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify-es": "^3.3.0"
-=======
     "grunt-contrib-uglify-es": "^3.3.0",
     "grunt-contrib-watch": "^1.1.0"
->>>>>>> braydenDev
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
