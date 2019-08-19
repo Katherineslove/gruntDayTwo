@@ -1,7 +1,11 @@
-grunt.initConfig({
+module.exports = function (grunt) {
 
-  ////// Katherine above Brayden below
+  grunt.initConfig({
 
-});
+    ////// Katherine above Brayden below
 
-////// load tasks above register tasks below
+  });
+
+  ////// load tasks above register tasks below
+
+};
