@@ -43,7 +43,11 @@ module.exports = function (grunt) {
     watch:{
       sass:{
         files: ['scss/*.scss'],
-        tasks:['sass', 'cssmin']
+        tasks:['sass', 'csslint', 'cssmin']
+      },
+      jsval:{
+        files: ['js/*.js'],
+        tasks: ['jshint', 'uglify']
       }
     }
   });
@@ -55,7 +59,8 @@ module.exports = function (grunt) {
   ////// load tasks above register tasks below
   grunt.registerTask('checkCSS', ['csslint']);
   grunt.registerTask('runCSS', ['csslint','cssmin']);
-
+  grunt.registerTask('default', ['watch'])
   grunt.registerTask('checkJS', ['jshint', 'uglify']);
+
 
 };
