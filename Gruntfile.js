@@ -18,6 +18,13 @@ module.exports = function (grunt) {
         }
       }
     },
+    sass: {
+      dist: {
+        files: {
+          'style.css': 'style.scss'
+        }
+      }
+    },
 
     ////// Katherine above Brayden below
     csslint: {
@@ -43,12 +50,14 @@ module.exports = function (grunt) {
   });
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify-es');
+
   ////// load tasks above register tasks below
+
   grunt.registerTask('checkCSS', ['csslint']);
   grunt.registerTask('runCSS', ['csslint','cssmin']);
-
   grunt.registerTask('checkJS', ['jshint', 'uglify']);
-
+  grunt.registerTask('checkSASS', ['sass']);
 };
