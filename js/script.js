@@ -1,1 +1,3 @@
-console.log(yeet)
+let yeet = 'yeet';
+
+console.log(yeet);
