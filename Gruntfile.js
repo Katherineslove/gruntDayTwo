@@ -45,6 +45,16 @@ module.exports = function (grunt) {
           ext: '.min.css'
         }]
       }
+    },
+    watch:{
+      sass:{
+        files: ['scss/*.scss'],
+        tasks:['sass', 'csslint', 'cssmin']
+      },
+      jsval:{
+        files: ['js/*.js'],
+        tasks: ['jshint', 'uglify']
+      }
     }
   });
   grunt.loadNpmTasks('grunt-contrib-csslint');
@@ -52,6 +62,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify-es');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   ////// load tasks above register tasks below
 
@@ -59,4 +70,8 @@ module.exports = function (grunt) {
   grunt.registerTask('runCSS', ['csslint','cssmin']);
   grunt.registerTask('checkJS', ['jshint', 'uglify']);
   grunt.registerTask('checkSASS', ['sass']);
+  grunt.registerTask('default', ['watch'])
+  grunt.registerTask('checkJS', ['jshint', 'uglify']);
+
+
 };
