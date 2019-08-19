@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Katherineslove/gruntDayTwo/issues"
   },
-  "homepage": "https://github.com/Katherineslove/gruntDayTwo#readme"
+  "homepage": "https://github.com/Katherineslove/gruntDayTwo#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
+  }
 }
