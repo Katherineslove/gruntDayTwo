@@ -19,7 +19,10 @@
   "devDependencies": {
     "grunt": "^1.0.4",
     "grunt-contrib-jshint": "^2.1.0",
-    "grunt-contrib-uglify-es": "^3.3.0"
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^3.0.0"
+
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
