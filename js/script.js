@@ -1,18 +1,18 @@
 $(document).ready(function(){
 
+  $.ajax({
+      type: 'GET',
+      url: 'config.json',
+      dataType: 'json',
+      error: (error) => {
+          console.log(error);
+      },
+      success: (data) => {
+          key = data.newsApiKey;
+          getNewsData();
+      }
+    });
 
-$.ajax({
-  url: '../config.json',
-  type: 'GET',
-  dataType: 'json',
-  success: function(keys){
-    newsApiKey = keys['newsApiKey'];
-    getNewsData();
-  },
-  error: function(){
-    console.log("cannot find config.json file, cannot run application");
-  }
-});
 getNewsData = () => {
   $.ajax({
     url: `https://newsapi.org/v2/everything?apiKey=${newsApiKey}`,
