@@ -15,12 +15,11 @@ $(document).ready(function(){
 
 getNewsData = () => {
   $.ajax({
-    url: `https://newsapi.org/v2/everything?apiKey=${newsApiKey}`,
+    url: `https://newsapi.org/v2/top-headlines?country=nz&apiKey=${key}`,
     type: 'GET',
     dataType: 'json',
     success: function(dataFromNewsApi){
       console.log(dataFromNewsApi);
-      newsArticleList.empty();
       if (dataFromNewsApi.articles.length === 0) {
         console.log(`There are no news articles`);
       } else {
