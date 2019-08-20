@@ -1,21 +1,21 @@
 $(document).ready(function(){
 
+  $.ajax({
+      type: 'GET',
+      url: 'config.json',
+      dataType: 'json',
+      error: (error) => {
+          console.log(error);
+      },
+      success: (data) => {
+          key = data.newsApiKey;
+          getNewsDataNZ();
+      }
+    });
 
-$.ajax({
-  url: 'config.json',
-  type: 'GET',
-  dataType: 'json',
-  success: function(keys){
-    newsApiKey = keys.newsApiKey;
-    getNewsData();
-  },
-  error: function(){
-    console.log("cannot find config.json file, cannot run application");
-  }
-});
 getNewsDataNZ = () => {
   $.ajax({
-    url: `https://newsapi.org/v2/top-headlines?country=nz&apiKey=${newsApiKey}`,
+    url: `https://newsapi.org/v2/top-headlines?country=nz&apiKey=${key}`,
     type: 'GET',
     dataType: 'json',
     success: function(dataFromNewsApi){
@@ -24,7 +24,7 @@ getNewsDataNZ = () => {
         console.log(`There are no news articles`);
       } else {
         dataFromNewsApi.articles.map(function(articles){
-
+        console.log(articles);
         });
       }
     },
